@@ -125,7 +125,6 @@ def main():
         print("links:", entry.get("links"))
 
     new_count = 0
-
     for entry in parsed.entries:
         raw_title = entry.get("title", "")
 
@@ -138,17 +137,9 @@ def main():
 
         if required not in entry_text:
             continue
-    
+
         if required_speaker and required_speaker not in entry_text:
             continue
-
-    pub_date = get_pub_date(entry)
-    if pub_date < start_date:
-        continue
-
-    audio_url = get_audio_url(entry)
-    if not audio_url:
-        continue
 
         pub_date = get_pub_date(entry)
         if pub_date < start_date:
@@ -179,7 +170,6 @@ def main():
         existing.append(episode)
         seen.add(guid)
         new_count += 1
-
     save_episodes(existing)
     build_feed(existing)
 
