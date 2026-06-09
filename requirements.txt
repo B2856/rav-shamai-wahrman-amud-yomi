@@ -1,0 +1,4 @@
+feedparser
+PyYAML
+requests
+python-dateutil
