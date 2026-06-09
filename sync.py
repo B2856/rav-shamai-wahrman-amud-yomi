@@ -9,6 +9,8 @@ import requests
 import yaml
 from dateutil import parser as dateparser
 
+from bs4 import BeautifulSoup
+
 
 CONFIG = yaml.safe_load(Path("config.yaml").read_text())
 EPISODES_PATH = Path("episodes.json")
