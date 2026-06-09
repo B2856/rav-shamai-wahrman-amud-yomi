@@ -1,3 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Rav Shamai Wahrman - Amud Yomi</title>
+    <link>https://b2856.github.io/rav-shamai-wahrman-amud-yomi</link>
+    <description>Amud Yomi shiurim by Rav Shamai Wahrman.</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Jun 2026 18:50:37 +0000</lastBuildDate>
+    <itunes:author>Rav Shamai Wahrman</itunes:author>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:category text="Religion &amp; Spirituality"/>
+
+  </channel>
 </rss>
