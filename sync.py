@@ -48,7 +48,6 @@ def get_pub_date(entry):
 
     return datetime.now(timezone.utc)
 
-
 def get_audio_length(url):
     try:
         r = requests.head(url, allow_redirects=True, timeout=20)
@@ -67,7 +66,6 @@ def save_episodes(episodes):
     EPISODES_PATH.write_text(
         json.dumps(episodes, indent=2, ensure_ascii=False) + "\n"
     )
-
 
 def build_feed(episodes):
     now = datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S %z")
@@ -103,76 +101,88 @@ def build_feed(episodes):
 """
     FEED_PATH.write_text(feed)
 
-def main():
-    start_date = datetime.fromisoformat(CONFIG["start_date"]).replace(tzinfo=timezone.utc)
-    required = CONFIG["required_title_text"].lower()
-    required_speaker = CONFIG.get("required_speaker_text", "").lower()
+def slug_to_title(slug: str) -> str:
+    slug = slug.strip("/")
+    slug = re.sub(r"^Amud-Yomi:-?", "", slug, flags=re.I)
+    slug = slug.replace("-", " ")
+    slug = re.sub(r"\s+", " ", slug)
+    return slug.strip()
 
-    existing = load_episodes()
-    seen = {ep["guid"] for ep in existing}
 
-    parsed = feedparser.parse(CONFIG["source_feed_url"])
+def title_to_audio_slug(title_slug: str) -> str:
+    return title_slug.lower().replace(":", "").replace(" ", "-")
 
-    print("Feed URL:", CONFIG["source_feed_url"])
-    print("Feed status:", getattr(parsed, "status", "no status"))
-    print("Feed title:", parsed.feed.get("title", "no feed title"))
-    print("Number of entries:", len(parsed.entries))
 
-    for i, entry in enumerate(parsed.entries[:10]):
-        print("---- ENTRY", i)
-        print("title:", entry.get("title"))
-        print("author:", entry.get("author"))
-        print("link:", entry.get("link"))
-        print("id:", entry.get("id"))
-        print("published:", entry.get("published"))
-        print("links:", entry.get("links"))
+def discover_yutorah_episodes():
+    url = CONFIG["source_teacher_page"]
+    r = requests.get(url, timeout=30)
+    r.raise_for_status()
 
-    new_count = 0
+    soup = BeautifulSoup(r.text, "html.parser")
 
-    for entry in parsed.entries:
-        raw_title = entry.get("title", "")
+    found = {}
 
-        entry_text = " ".join([
-            entry.get("title", ""),
-            entry.get("author", ""),
-            entry.get("summary", ""),
-            entry.get("description", ""),
-        ]).lower()
+    for a in soup.find_all("a", href=True):
+        href = a["href"]
 
-        if required not in entry_text:
+        match = re.search(r"/lectures/(\d+)/([^\"?#]+)", href)
+        if not match:
             continue
 
-        if required_speaker and required_speaker not in entry_text:
+        shiur_id = match.group(1)
+        slug = match.group(2)
+
+        if CONFIG["required_title_text"].lower().replace(" ", "-") not in slug.lower():
             continue
 
-        pub_date = get_pub_date(entry)
-        if pub_date < start_date:
-            continue
+        title = slug_to_title(slug)
+        year = datetime.now(timezone.utc).year
 
-        audio_url = get_audio_url(entry)
-        if not audio_url:
-            continue
+        audio_slug = title_to_audio_slug(slug)
+        audio_url = (
+            f"https://download.yutorah.org/{year}/"
+            f"{CONFIG['media_folder_id']}/{shiur_id}/{audio_slug}.mp3"
+        )
 
-        guid = entry.get("id") or audio_url
-        if guid in seen:
-            continue
+        source_url = f"https://www.yutorah.org/lectures/{shiur_id}/{slug}"
 
-        title = clean_episode_title(raw_title)
-        source_url = entry.get("link", audio_url)
-
-        episode = {
-            "guid": guid,
+        found[shiur_id] = {
+            "guid": shiur_id,
             "title": title,
             "description": f"{title}. Source: YUTorah.",
             "source_url": source_url,
             "audio_url": audio_url,
-            "length": get_audio_length(audio_url),
-            "pub_date": pub_date.isoformat(),
-            "rss_date": pub_date.strftime("%a, %d %b %Y %H:%M:%S %z"),
+            "length": "1000000",
+            "pub_date": datetime.now(timezone.utc).isoformat(),
+            "rss_date": datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S %z"),
         }
 
+    return list(found.values())
+
+def main():
+    start_date = datetime.fromisoformat(CONFIG["start_date"]).replace(tzinfo=timezone.utc)
+
+    existing = load_episodes()
+    seen = {ep["guid"] for ep in existing}
+
+    discovered = discover_yutorah_episodes()
+
+    print("Discovered episodes:", len(discovered))
+
+    new_count = 0
+
+    for episode in discovered:
+        if episode["guid"] in seen:
+            continue
+
+        # Since the teacher page may not expose exact upload dates,
+        # we only add future/newly discovered episodes after initial setup.
+        pub_date = dateparser.parse(episode["pub_date"]).astimezone(timezone.utc)
+        if pub_date < start_date:
+            continue
+
         existing.append(episode)
-        seen.add(guid)
+        seen.add(episode["guid"])
         new_count += 1
 
     save_episodes(existing)
