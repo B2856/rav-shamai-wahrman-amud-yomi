@@ -111,6 +111,18 @@ def main():
 
     parsed = feedparser.parse(CONFIG["source_feed_url"])
 
+    print("Feed URL:", CONFIG["source_feed_url"])
+    print("Feed status:", getattr(parsed, "status", "no status"))
+    print("Feed title:", parsed.feed.get("title", "no feed title"))
+    print("Number of entries:", len(parsed.entries))
+    for i, entry in enumerate(parsed.entries[:10]):
+        print("---- ENTRY", i)
+        print("title:", entry.get("title"))
+        print("link:", entry.get("link"))
+        print("id:", entry.get("id"))
+        print("published:", entry.get("published"))
+        print("links:", entry.get("links"))
+
     new_count = 0
 
     for entry in parsed.entries:
