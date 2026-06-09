@@ -105,6 +105,7 @@ def build_feed(episodes):
 def main():
     start_date = datetime.fromisoformat(CONFIG["start_date"]).replace(tzinfo=timezone.utc)
     required = CONFIG["required_title_text"].lower()
+    required_speaker = CONFIG.get("required_speaker_text", "").lower()
 
     existing = load_episodes()
     seen = {ep["guid"] for ep in existing}
@@ -126,9 +127,28 @@ def main():
     new_count = 0
 
     for entry in parsed.entries:
-        raw_title = entry.get("title", "")
-        if required not in raw_title.lower():
-            continue
+    raw_title = entry.get("title", "")
+
+    entry_text = " ".join([
+        entry.get("title", ""),
+        entry.get("author", ""),
+        entry.get("summary", ""),
+        entry.get("description", ""),
+    ]).lower()
+
+    if required not in entry_text:
+        continue
+
+    if required_speaker and required_speaker not in entry_text:
+        continue
+
+    pub_date = get_pub_date(entry)
+    if pub_date < start_date:
+        continue
+
+    audio_url = get_audio_url(entry)
+    if not audio_url:
+        continue
 
         pub_date = get_pub_date(entry)
         if pub_date < start_date:
