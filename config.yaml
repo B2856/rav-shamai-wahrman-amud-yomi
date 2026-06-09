@@ -1,14 +1,13 @@
 podcast_title: "Rav Shamai Wahrman - Amud Yomi"
-podcast_author: "Rav Shamai Wahrman"
-podcast_description: "Amud Yomi shiurim by Rav Shamai Wahrman."
+podcast_author: "Rabbi Shamai Wahrman"
+podcast_description: "Amud Yomi shiurim by Rabbi Shamai Wahrman."
 language: "en-us"
 
 site_url: "https://b2856.github.io/rav-shamai-wahrman-amud-yomi"
 feed_url: "https://b2856.github.io/rav-shamai-wahrman-amud-yomi/feed.xml"
 
-source_feed_url: "https://www.yutorah.org/rss/RecentAudioShiurim"
-required_title_text: "Amud Yomi"
-required_speaker_text: "Shamai Wahrman"
+source_teacher_page: "https://www.yutorah.org/teachers/Rabbi-Shamai-Wahrman/"
+media_folder_id: "14221"
 
-start_date: "2026-06-08"
+start_date: "2026-06-09"
 required_title_text: "Amud Yomi"
