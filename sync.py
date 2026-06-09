@@ -176,6 +176,6 @@ def main():
     save_episodes(existing)
     build_feed(existing)
 
-    print(f"Added {new
+    print(f"Added {new_count} new episode(s). Total: {len(existing)}")
 if __name__ == "__main__":
     main()
