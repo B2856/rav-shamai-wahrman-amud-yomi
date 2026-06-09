@@ -115,7 +115,18 @@ def title_to_audio_slug(title_slug: str) -> str:
 
 def discover_yutorah_episodes():
     url = CONFIG["source_teacher_page"]
-    r = requests.get(url, timeout=30)
+
+    headers = {
+        "User-Agent": (
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/126.0.0.0 Safari/537.36"
+        ),
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+    }
+
+    r = requests.get(url, headers=headers, timeout=30)
     r.raise_for_status()
 
     soup = BeautifulSoup(r.text, "html.parser")
