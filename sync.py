@@ -101,7 +101,6 @@ def build_feed(episodes):
 """
     FEED_PATH.write_text(feed)
 
-
 def main():
     start_date = datetime.fromisoformat(CONFIG["start_date"]).replace(tzinfo=timezone.utc)
     required = CONFIG["required_title_text"].lower()
@@ -116,15 +115,18 @@ def main():
     print("Feed status:", getattr(parsed, "status", "no status"))
     print("Feed title:", parsed.feed.get("title", "no feed title"))
     print("Number of entries:", len(parsed.entries))
+
     for i, entry in enumerate(parsed.entries[:10]):
         print("---- ENTRY", i)
         print("title:", entry.get("title"))
+        print("author:", entry.get("author"))
         print("link:", entry.get("link"))
         print("id:", entry.get("id"))
         print("published:", entry.get("published"))
         print("links:", entry.get("links"))
 
     new_count = 0
+
     for entry in parsed.entries:
         raw_title = entry.get("title", "")
 
@@ -170,11 +172,10 @@ def main():
         existing.append(episode)
         seen.add(guid)
         new_count += 1
+
     save_episodes(existing)
     build_feed(existing)
 
-    print(f"Added {new_count} new episode(s). Total: {len(existing)}")
-
-
+    print(f"Added {new
 if __name__ == "__main__":
     main()
