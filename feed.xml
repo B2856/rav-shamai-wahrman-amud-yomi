@@ -7,10 +7,18 @@
     <link>https://b2856.github.io/rav-shamai-wahrman-amud-yomi</link>
     <description>Amud Yomi shiurim by Rav Shamai Wahrman.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Jun 2026 19:28:46 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2026 19:33:22 +0000</lastBuildDate>
     <itunes:author>Rav Shamai Wahrman</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Religion &amp; Spirituality"/>
 
+    <item>
+      <title>Makkos 2a</title>
+      <description>Makkos 2a. Source: YUTorah.</description>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">1178830</guid>
+      <enclosure url="https://download.yutorah.org/2026/14221/1178830/amud-yomi-makkos-2a.mp3" length="1000000" type="audio/mpeg"/>
+      <link>https://www.yutorah.org/lectures/1178830/Amud-Yomi:-Makkos-2a</link>
+    </item>
   </channel>
 </rss>
