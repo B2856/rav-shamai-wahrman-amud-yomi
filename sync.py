@@ -172,28 +172,65 @@ def discover_yutorah_episodes():
 
 def main():
     start_date = datetime.fromisoformat(CONFIG["start_date"]).replace(tzinfo=timezone.utc)
+    required = CONFIG["required_title_text"].lower()
+    required_speaker = CONFIG.get("required_speaker_text", "").lower()
 
     existing = load_episodes()
     seen = {ep["guid"] for ep in existing}
 
-    discovered = discover_yutorah_episodes()
+    parsed = feedparser.parse(CONFIG["source_feed_url"])
 
-    print("Discovered episodes:", len(discovered))
+    print("Feed URL:", CONFIG["source_feed_url"])
+    print("Feed status:", getattr(parsed, "status", "no status"))
+    print("Feed title:", parsed.feed.get("title", "no feed title"))
+    print("Number of entries:", len(parsed.entries))
 
     new_count = 0
 
-    for episode in discovered:
-        if episode["guid"] in seen:
+    for entry in parsed.entries:
+        raw_title = entry.get("title", "")
+
+        entry_text = " ".join([
+            entry.get("title", ""),
+            entry.get("author", ""),
+            entry.get("summary", ""),
+            entry.get("description", ""),
+        ]).lower()
+
+        if required not in entry_text:
             continue
 
-        # Since the teacher page may not expose exact upload dates,
-        # we only add future/newly discovered episodes after initial setup.
-        pub_date = dateparser.parse(episode["pub_date"]).astimezone(timezone.utc)
+        if required_speaker and required_speaker not in entry_text:
+            continue
+
+        pub_date = get_pub_date(entry)
         if pub_date < start_date:
             continue
 
+        audio_url = get_audio_url(entry)
+        if not audio_url:
+            continue
+
+        guid = entry.get("id") or audio_url
+        if guid in seen:
+            continue
+
+        title = clean_episode_title(raw_title)
+        source_url = entry.get("link", audio_url)
+
+        episode = {
+            "guid": guid,
+            "title": title,
+            "description": f"{title}. Source: YUTorah.",
+            "source_url": source_url,
+            "audio_url": audio_url.replace("http://", "https://"),
+            "length": get_audio_length(audio_url),
+            "pub_date": pub_date.isoformat(),
+            "rss_date": pub_date.strftime("%a, %d %b %Y %H:%M:%S %z"),
+        }
+
         existing.append(episode)
-        seen.add(episode["guid"])
+        seen.add(guid)
         new_count += 1
 
     save_episodes(existing)
