@@ -127,20 +127,20 @@ def main():
     new_count = 0
 
     for entry in parsed.entries:
-    raw_title = entry.get("title", "")
+        raw_title = entry.get("title", "")
 
-    entry_text = " ".join([
-        entry.get("title", ""),
-        entry.get("author", ""),
-        entry.get("summary", ""),
-        entry.get("description", ""),
-    ]).lower()
+        entry_text = " ".join([
+            entry.get("title", ""),
+            entry.get("author", ""),
+            entry.get("summary", ""),
+            entry.get("description", ""),
+        ]).lower()
 
-    if required not in entry_text:
-        continue
-
-    if required_speaker and required_speaker not in entry_text:
-        continue
+        if required not in entry_text:
+            continue
+    
+        if required_speaker and required_speaker not in entry_text:
+            continue
 
     pub_date = get_pub_date(entry)
     if pub_date < start_date:
