@@ -9,8 +9,6 @@ import requests
 import yaml
 from dateutil import parser as dateparser
 
-from bs4 import BeautifulSoup
-
 
 CONFIG = yaml.safe_load(Path("config.yaml").read_text())
 EPISODES_PATH = Path("episodes.json")
@@ -27,19 +25,21 @@ def clean_episode_title(raw_title: str) -> str:
 
 def get_audio_url(entry):
     for link in entry.get("links", []):
-        if link.get("type") == "audio/mpeg":
-            return link.get("href")
+        link_type = link.get("type", "")
         href = link.get("href", "")
-        if href.endswith(".mp3"):
+
+        if link_type in ["audio/mpeg", "audio/mp3"]:
+            return href
+
+        if href.lower().endswith(".mp3"):
             return href
 
     for key in ["link", "id"]:
         val = entry.get(key, "")
-        if isinstance(val, str) and val.endswith(".mp3"):
+        if isinstance(val, str) and val.lower().endswith(".mp3"):
             return val
 
     return None
-
 
 def get_pub_date(entry):
     for key in ["published", "updated", "created"]:
@@ -101,74 +101,6 @@ def build_feed(episodes):
 """
     FEED_PATH.write_text(feed)
 
-def slug_to_title(slug: str) -> str:
-    slug = slug.strip("/")
-    slug = re.sub(r"^Amud-Yomi:-?", "", slug, flags=re.I)
-    slug = slug.replace("-", " ")
-    slug = re.sub(r"\s+", " ", slug)
-    return slug.strip()
-
-
-def title_to_audio_slug(title_slug: str) -> str:
-    return title_slug.lower().replace(":", "").replace(" ", "-")
-
-
-def discover_yutorah_episodes():
-    url = CONFIG["source_teacher_page"]
-
-    headers = {
-        "User-Agent": (
-            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) "
-            "Chrome/126.0.0.0 Safari/537.36"
-        ),
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.9",
-    }
-
-    r = requests.get(url, headers=headers, timeout=30)
-    r.raise_for_status()
-
-    soup = BeautifulSoup(r.text, "html.parser")
-
-    found = {}
-
-    for a in soup.find_all("a", href=True):
-        href = a["href"]
-
-        match = re.search(r"/lectures/(\d+)/([^\"?#]+)", href)
-        if not match:
-            continue
-
-        shiur_id = match.group(1)
-        slug = match.group(2)
-
-        if CONFIG["required_title_text"].lower().replace(" ", "-") not in slug.lower():
-            continue
-
-        title = slug_to_title(slug)
-        year = datetime.now(timezone.utc).year
-
-        audio_slug = title_to_audio_slug(slug)
-        audio_url = (
-            f"https://download.yutorah.org/{year}/"
-            f"{CONFIG['media_folder_id']}/{shiur_id}/{audio_slug}.mp3"
-        )
-
-        source_url = f"https://www.yutorah.org/lectures/{shiur_id}/{slug}"
-
-        found[shiur_id] = {
-            "guid": shiur_id,
-            "title": title,
-            "description": f"{title}. Source: YUTorah.",
-            "source_url": source_url,
-            "audio_url": audio_url,
-            "length": "1000000",
-            "pub_date": datetime.now(timezone.utc).isoformat(),
-            "rss_date": datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S %z"),
-        }
-
-    return list(found.values())
 
 def main():
     start_date = datetime.fromisoformat(CONFIG["start_date"]).replace(tzinfo=timezone.utc)
@@ -237,5 +169,6 @@ def main():
     build_feed(existing)
 
     print(f"Added {new_count} new episode(s). Total: {len(existing)}")
+    
 if __name__ == "__main__":
     main()
