@@ -6,11 +6,26 @@
     <title>Rav Shamai Wahrman - Amud Yomi</title>
     <link>https://b2856.github.io/rav-shamai-wahrman-amud-yomi</link>
     <description>Amud Yomi shiurim by Rabbi Shamai Wahrman.</description>
+    <copyright>© Rabbi Shamai Wahrman</copyright>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Jun 2026 06:58:51 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jun 2026 07:29:20 +0000</lastBuildDate>
     <itunes:author>Rabbi Shamai Wahrman</itunes:author>
+
+    <itunes:owner>
+      <itunes:name>Rav Shamai Wahrman Amud Yomi</itunes:name>
+      <itunes:email>ravshamaiamudyomi@gmail.com</itunes:email>
+    </itunes:owner>
+    
+    <itunes:type>episodic</itunes:type>
+    
+    <itunes:summary>Amud Yomi shiurim by Rabbi Shamai Wahrman.</itunes:summary>
+    
+    <itunes:image href="https://b2856.github.io/rav-shamai-wahrman-amud-yomi/RavShamai.jpg"/>
+    
     <itunes:explicit>false</itunes:explicit>
-    <itunes:category text="Religion &amp; Spirituality"/>
+    <itunes:category text="Religion &amp; Spirituality">
+      <itunes:category text="Judaism"/>
+    </itunes:category>
 
     <item>
       <title>Makkos 2a</title>
