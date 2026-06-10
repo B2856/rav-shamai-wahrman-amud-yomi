@@ -2,7 +2,7 @@ name: Sync YUTorah Podcast
 
 on:
   schedule:
-    - cron: "0 */16 * * *"
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 permissions:
