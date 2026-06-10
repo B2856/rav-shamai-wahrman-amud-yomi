@@ -6,7 +6,7 @@ language: "en-us"
 site_url: "https://b2856.github.io/rav-shamai-wahrman-amud-yomi"
 feed_url: "https://b2856.github.io/rav-shamai-wahrman-amud-yomi/feed.xml"
 
-source_feed_url: "https://www.yutorah.org/rss/RssAudioOnly/teacher/Rabbi-Shamai-Wahrman"
+source_feed_url: "https://www.yutorah.org/rss/RecentAudioShiurim?teacher=Rabbi-Shamai-Wahrman"
 required_title_text: "Amud Yomi"
 required_speaker_text: "Wahrman"
 
