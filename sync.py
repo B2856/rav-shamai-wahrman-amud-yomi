@@ -90,11 +90,26 @@ def build_feed(episodes):
     <title>{escape(CONFIG["podcast_title"])}</title>
     <link>{escape(CONFIG["site_url"])}</link>
     <description>{escape(CONFIG["podcast_description"])}</description>
+    <copyright>© Rabbi Shamai Wahrman</copyright>
     <language>{CONFIG["language"]}</language>
     <lastBuildDate>{now}</lastBuildDate>
     <itunes:author>{escape(CONFIG["podcast_author"])}</itunes:author>
+
+    <itunes:owner>
+      <itunes:name>Rav Shamai Wahrman Amud Yomi</itunes:name>
+      <itunes:email>ravshamaiamudyomi@gmail.com</itunes:email>
+    </itunes:owner>
+    
+    <itunes:type>episodic</itunes:type>
+    
+    <itunes:summary>{escape(CONFIG["podcast_description"])}</itunes:summary>
+    
+    <itunes:image href="https://b2856.github.io/rav-shamai-wahrman-amud-yomi/RavShamai.jpg"/>
+    
     <itunes:explicit>false</itunes:explicit>
-    <itunes:category text="Religion &amp; Spirituality"/>
+    <itunes:category text="Religion &amp; Spirituality">
+      <itunes:category text="Judaism"/>
+    </itunes:category>
 {''.join(items)}
   </channel>
 </rss>
