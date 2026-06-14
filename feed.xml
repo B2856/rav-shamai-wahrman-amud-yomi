@@ -8,7 +8,7 @@
     <description>Amud Yomi shiurim by Rabbi Shamai Wahrman.</description>
     <copyright>© Rabbi Shamai Wahrman</copyright>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 Jun 2026 02:40:10 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2026 09:18:38 +0000</lastBuildDate>
     <itunes:author>Rabbi Shamai Wahrman</itunes:author>
 
     <itunes:owner>
@@ -27,6 +27,14 @@
       <itunes:category text="Judaism"/>
     </itunes:category>
 
+    <item>
+      <title>Makkos 3b</title>
+      <description>Makkos 3b. Source: YUTorah.</description>
+      <pubDate>Sun, 14 Jun 2026 02:20:18 +0000</pubDate>
+      <guid isPermaLink="false">http://media.yutorah.org/yuriets/2026/14221/1179364.MP3</guid>
+      <enclosure url="https://download.yutorah.org/2026/14221/1179364/amud-yomi-makkos-3b.mp3" length="7882865" type="audio/mpeg"/>
+      <link>https://www.yutorah.org/lectures/1179364/Amud-Yomi:-Makkos-3b</link>
+    </item>
     <item>
       <title>Makkos 3a</title>
       <description>Makkos 3a. Source: YUTorah.</description>
