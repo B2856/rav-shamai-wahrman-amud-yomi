@@ -8,7 +8,7 @@
     <description>Amud Yomi shiurim by Rabbi Shamai Wahrman.</description>
     <copyright>© Rabbi Shamai Wahrman</copyright>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Jun 2026 18:18:01 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2026 08:43:24 +0000</lastBuildDate>
     <itunes:author>Rabbi Shamai Wahrman</itunes:author>
 
     <itunes:owner>
@@ -27,6 +27,14 @@
       <itunes:category text="Judaism"/>
     </itunes:category>
 
+    <item>
+      <title>Makkos 7a</title>
+      <description>Makkos 7a. Source: YUTorah.</description>
+      <pubDate>Tue, 23 Jun 2026 03:48:22 +0000</pubDate>
+      <guid isPermaLink="false">http://media.yutorah.org/yuriets/2026/14221/1180327.MP3</guid>
+      <enclosure url="https://download.yutorah.org/2026/14221/1180327/amud-yomi-makkos-7a.mp3" length="5685761" type="audio/mpeg"/>
+      <link>https://www.yutorah.org/lectures/1180327/Amud-Yomi:-Makkos-7a</link>
+    </item>
     <item>
       <title>Makkos 6b</title>
       <description>Makkos 6b. Source: YUTorah.</description>
@@ -50,6 +58,30 @@
       <guid isPermaLink="false">http://media.yutorah.org/yuriets/2026/14221/1179916.MP3</guid>
       <enclosure url="https://download.yutorah.org/2026/14221/1179916/amud-yomi-makkos-5b.mp3" length="12374989" type="audio/mpeg"/>
       <link>https://www.yutorah.org/lectures/1179916/Amud-Yomi:-Makkos-5b</link>
+    </item>
+    <item>
+      <title>Makkos 4b</title>
+      <description>Makkos 4b. Source: YUTorah.</description>
+      <pubDate>Wed, 17 Jun 2026 08:48:24 +0000</pubDate>
+      <guid isPermaLink="false">http://media.yutorah.org/yuriets/2026/14221/1179746.MP3</guid>
+      <enclosure url="https://download.yutorah.org/2026/14221/1179746/amud-yomimakkos-4b.mp3" length="10293219" type="audio/mpeg"/>
+      <link>https://www.yutorah.org/lectures/1179746/Amud-Yomi:Makkos-4b</link>
+    </item>
+    <item>
+      <title>Makkos 5a</title>
+      <description>Makkos 5a. Source: YUTorah.</description>
+      <pubDate>Wed, 17 Jun 2026 08:47:22 +0000</pubDate>
+      <guid isPermaLink="false">http://media.yutorah.org/yuriets/2026/14221/1179744.MP3</guid>
+      <enclosure url="https://download.yutorah.org/2026/14221/1179744/amud-yomi-makkos-5a.mp3" length="11944169" type="audio/mpeg"/>
+      <link>https://www.yutorah.org/lectures/1179744/Amud-Yomi:-Makkos-5a</link>
+    </item>
+    <item>
+      <title>Makkos 4b</title>
+      <description>Makkos 4b. Source: YUTorah.</description>
+      <pubDate>Tue, 16 Jun 2026 12:44:15 +0000</pubDate>
+      <guid isPermaLink="false">http://media.yutorah.org/yuriets/2026/14221/1179629.MP3</guid>
+      <enclosure url="https://download.yutorah.org/2026/14221/1179629/amud-yomi-makkos-4b.mp3" length="10293221" type="audio/mpeg"/>
+      <link>https://www.yutorah.org/lectures/1179629/Amud-Yomi:-Makkos-4b</link>
     </item>
     <item>
       <title>Makkos 4a</title>

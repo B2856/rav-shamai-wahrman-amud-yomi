@@ -78,5 +78,45 @@
     "length": "9637969",
     "pub_date": "2026-06-22T02:56:31+00:00",
     "rss_date": "Mon, 22 Jun 2026 02:56:31 +0000"
+  },
+  {
+    "guid": "http://media.yutorah.org/yuriets/2026/14221/1180327.MP3",
+    "title": "Makkos 7a",
+    "description": "Makkos 7a. Source: YUTorah.",
+    "source_url": "https://www.yutorah.org/lectures/1180327/Amud-Yomi:-Makkos-7a",
+    "audio_url": "https://download.yutorah.org/2026/14221/1180327/amud-yomi-makkos-7a.mp3",
+    "length": "5685761",
+    "pub_date": "2026-06-23T03:48:22+00:00",
+    "rss_date": "Tue, 23 Jun 2026 03:48:22 +0000"
+  },
+  {
+    "guid": "http://media.yutorah.org/yuriets/2026/14221/1179746.MP3",
+    "title": "Makkos 4b",
+    "description": "Makkos 4b. Source: YUTorah.",
+    "source_url": "https://www.yutorah.org/lectures/1179746/Amud-Yomi:Makkos-4b",
+    "audio_url": "https://download.yutorah.org/2026/14221/1179746/amud-yomimakkos-4b.mp3",
+    "length": "10293219",
+    "pub_date": "2026-06-17T08:48:24+00:00",
+    "rss_date": "Wed, 17 Jun 2026 08:48:24 +0000"
+  },
+  {
+    "guid": "http://media.yutorah.org/yuriets/2026/14221/1179744.MP3",
+    "title": "Makkos 5a",
+    "description": "Makkos 5a. Source: YUTorah.",
+    "source_url": "https://www.yutorah.org/lectures/1179744/Amud-Yomi:-Makkos-5a",
+    "audio_url": "https://download.yutorah.org/2026/14221/1179744/amud-yomi-makkos-5a.mp3",
+    "length": "11944169",
+    "pub_date": "2026-06-17T08:47:22+00:00",
+    "rss_date": "Wed, 17 Jun 2026 08:47:22 +0000"
+  },
+  {
+    "guid": "http://media.yutorah.org/yuriets/2026/14221/1179629.MP3",
+    "title": "Makkos 4b",
+    "description": "Makkos 4b. Source: YUTorah.",
+    "source_url": "https://www.yutorah.org/lectures/1179629/Amud-Yomi:-Makkos-4b",
+    "audio_url": "https://download.yutorah.org/2026/14221/1179629/amud-yomi-makkos-4b.mp3",
+    "length": "10293221",
+    "pub_date": "2026-06-16T12:44:15+00:00",
+    "rss_date": "Tue, 16 Jun 2026 12:44:15 +0000"
   }
 ]
