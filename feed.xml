@@ -8,7 +8,7 @@
     <description>Amud Yomi shiurim by Rabbi Shamai Wahrman.</description>
     <copyright>© Rabbi Shamai Wahrman</copyright>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Jul 2026 15:11:11 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2026 06:59:15 +0000</lastBuildDate>
     <itunes:author>Rabbi Shamai Wahrman</itunes:author>
 
     <itunes:owner>
@@ -27,6 +27,22 @@
       <itunes:category text="Judaism"/>
     </itunes:category>
 
+    <item>
+      <title>Makkos 13a</title>
+      <description>Makkos 13a. Source: YUTorah.</description>
+      <pubDate>Wed, 08 Jul 2026 00:33:45 +0000</pubDate>
+      <guid isPermaLink="false">http://media.yutorah.org/yuriets/2026/14221/1182057.MP3</guid>
+      <enclosure url="https://download.yutorah.org/2026/14221/1182057/amud-yomi-makkos-13a.mp3" length="14390719" type="audio/mpeg"/>
+      <link>https://www.yutorah.org/lectures/1182057/Amud-Yomi:-Makkos-13a</link>
+    </item>
+    <item>
+      <title>Makkos 12b</title>
+      <description>Makkos 12b. Source: YUTorah.</description>
+      <pubDate>Wed, 08 Jul 2026 00:31:43 +0000</pubDate>
+      <guid isPermaLink="false">http://media.yutorah.org/yuriets/2026/14221/1182056.MP3</guid>
+      <enclosure url="https://download.yutorah.org/2026/14221/1182056/amud-yomi-makkos-12b.mp3" length="9980963" type="audio/mpeg"/>
+      <link>https://www.yutorah.org/lectures/1182056/Amud-Yomi:-Makkos-12b</link>
+    </item>
     <item>
       <title>Makkos 12a</title>
       <description>Makkos 12a. Source: YUTorah.</description>
