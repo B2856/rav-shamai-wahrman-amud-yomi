@@ -8,7 +8,7 @@
     <description>Amud Yomi shiurim by Rabbi Shamai Wahrman.</description>
     <copyright>© Rabbi Shamai Wahrman</copyright>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Jul 2026 14:18:21 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 07:32:59 +0000</lastBuildDate>
     <itunes:author>Rabbi Shamai Wahrman</itunes:author>
 
     <itunes:owner>
@@ -27,6 +27,14 @@
       <itunes:category text="Judaism"/>
     </itunes:category>
 
+    <item>
+      <title>Amud Yomi Makos 17b</title>
+      <description>Amud Yomi Makos 17b. Source: YUTorah.</description>
+      <pubDate>Wed, 22 Jul 2026 00:04:58 +0000</pubDate>
+      <guid isPermaLink="false">http://media.yutorah.org/yuriets/2026/14221/1183755.MP3</guid>
+      <enclosure url="https://download.yutorah.org/2026/14221/1183755/amud-yomi-makos-17b.mp3" length="6706623" type="audio/mpeg"/>
+      <link>https://www.yutorah.org/lectures/1183755/Amud-Yomi-Makos-17b</link>
+    </item>
     <item>
       <title>Amud Yomi Makos 17a</title>
       <description>Amud Yomi Makos 17a. Source: YUTorah.</description>
