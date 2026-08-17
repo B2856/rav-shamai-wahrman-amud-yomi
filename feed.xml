@@ -8,7 +8,7 @@
     <description>Amud Yomi shiurim by Rabbi Shamai Wahrman.</description>
     <copyright>© Rabbi Shamai Wahrman</copyright>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Aug 2026 14:35:56 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Aug 2026 07:58:15 +0000</lastBuildDate>
     <itunes:author>Rabbi Shamai Wahrman</itunes:author>
 
     <itunes:owner>
@@ -27,6 +27,14 @@
       <itunes:category text="Judaism"/>
     </itunes:category>
 
+    <item>
+      <title>Amud Yomi Rosh HaShana 3b</title>
+      <description>Amud Yomi Rosh HaShana 3b. Source: YUTorah.</description>
+      <pubDate>Mon, 17 Aug 2026 03:13:28 +0000</pubDate>
+      <guid isPermaLink="false">http://media.yutorah.org/yuriets/2026/14221/1185657.MP3</guid>
+      <enclosure url="https://download.yutorah.org/2026/14221/1185657/amud-yomi-rosh-hashana-3b.mp3" length="7288151" type="audio/mpeg"/>
+      <link>https://www.yutorah.org/lectures/1185657/Amud-Yomi-Rosh-HaShana-3b</link>
+    </item>
     <item>
       <title>Amud Yomi Rosh HaShana 3a</title>
       <description>Amud Yomi Rosh HaShana 3a. Source: YUTorah.</description>
