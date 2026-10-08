@@ -809,15 +809,15 @@
     "pub_date": "2026-10-06T14:36:34+00:00",
     "rss_date": "Tue, 06 Oct 2026 14:36:34 +0000"
   },
-{
-  "guid": "archive-rosh-hashana-18a",
-  "title": "Amud Yomi Rosh HaShana 18a",
-  "description": "Amud Yomi Rosh HaShana 18a. Source: Internet Archive.",
-  "source_url": "https://archive.org/details/amud-yomi-rosh-hashana-18a",
-  "audio_url": "https://archive.org/download/amud-yomi-rosh-hashana-18a/Amud%20Yomi%20Rosh%20HaShana%2018a.mp3",
-  "length": "12905287",
-  "pub_date": "2026-10-08T09:00:00+00:00",
-  "rss_date": "Thu, 08 Oct 2026 09:00:00 +0000"
-}
+  {
+    "guid": "archive-rosh-hashana-18a",
+    "title": "Amud Yomi Rosh HaShana 18a",
+    "description": "Amud Yomi Rosh HaShana 18a. Source: Internet Archive.",
+    "source_url": "https://archive.org/details/amud-yomi-rosh-hashana-18a",
+    "audio_url": "https://archive.org/download/amud-yomi-rosh-hashana-18a/Amud%20Yomi%20Rosh%20HaShana%2018a.mp3",
+    "length": "12905287",
+    "pub_date": "2026-10-08T09:00:00+00:00",
+    "rss_date": "Thu, 08 Oct 2026 09:00:00 +0000"
+  }
   
 ]
