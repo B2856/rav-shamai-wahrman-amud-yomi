@@ -8,7 +8,7 @@
     <description>Amud Yomi shiurim by Rabbi Shamai Wahrman.</description>
     <copyright>© Rabbi Shamai Wahrman</copyright>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Oct 2026 23:27:50 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 06:23:03 +0000</lastBuildDate>
     <itunes:author>Rabbi Shamai Wahrman</itunes:author>
 
     <itunes:owner>
@@ -27,6 +27,14 @@
       <itunes:category text="Judaism"/>
     </itunes:category>
 
+    <item>
+      <title>Amud Yomi Rosh HaShana 26a</title>
+      <description>Amud Yomi Rosh HaShana 26a. Source: YUTorah.</description>
+      <pubDate>Sat, 31 Oct 2026 21:46:05 +0000</pubDate>
+      <guid isPermaLink="false">http://media.yutorah.org/yuriets/2026/14221/1194243.MP3</guid>
+      <enclosure url="https://download.yutorah.org/2026/14221/1194243/amud-yomi-rosh-hashana-26a.mp3" length="13888305" type="audio/mpeg"/>
+      <link>https://www.yutorah.org/lectures/1194243/Amud-Yomi-Rosh-HaShana-26a</link>
+    </item>
     <item>
       <title>Amud Yomi Rosh HaShana 25b</title>
       <description>Amud Yomi Rosh HaShana 25b. Source: YUTorah.</description>
