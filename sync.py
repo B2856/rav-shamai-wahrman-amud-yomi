@@ -17,10 +17,10 @@ FEED_PATH = Path("feed.xml")
 
 def clean_episode_title(raw_title: str) -> str:
     title = raw_title.strip()
-    title = re.sub(r"^Amud Yomi:\s*", "", title, flags=re.I)
+    title = re.sub(r"^Amud[\s-]+Yomi\s*:?\s*", "", title, flags=re.I)
     title = title.replace("-", " ")
-    title = re.sub(r"\s+", " ", title)
-    return title.strip()
+    title = re.sub(r"\s+", " ", title).strip()
+    return f"Amud Yomi {title}"
 
 
 def get_audio_url(entry):
@@ -144,7 +144,16 @@ def main():
             entry.get("description", ""),
         ]).lower()
 
-        if required not in entry_text:
+        is_amud_yomi = required in entry_text
+
+        is_daf_title = bool(re.fullmatch(
+            r"(?:Amud[\s-]+Yomi[\s:-]*)?"
+            r"Rosh[\s-]+Ha[\s-]*Shana[\s-]+\d+[ab]",
+            raw_title.strip(),
+            flags=re.I
+        ))
+
+        if not (is_amud_yomi or is_daf_title):
             continue
 
         if required_speaker and required_speaker not in entry_text:
