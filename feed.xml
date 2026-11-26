@@ -8,7 +8,7 @@
     <description>Amud Yomi shiurim by Rabbi Shamai Wahrman.</description>
     <copyright>© Rabbi Shamai Wahrman</copyright>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Nov 2026 17:24:14 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 01:50:02 +0000</lastBuildDate>
     <itunes:author>Rabbi Shamai Wahrman</itunes:author>
 
     <itunes:owner>
@@ -27,6 +27,14 @@
       <itunes:category text="Judaism"/>
     </itunes:category>
 
+    <item>
+      <title>Amud Yomi Megilla 2a</title>
+      <description>Amud Yomi Megilla 2a. Source: YUTorah.</description>
+      <pubDate>Wed, 25 Nov 2026 14:36:07 +0000</pubDate>
+      <guid isPermaLink="false">http://media.yutorah.org/yuriets/2026/14221/1197786.MP3</guid>
+      <enclosure url="https://download.yutorah.org/2026/14221/1197786/amud-yomi-megilla-2a.mp3" length="12860877" type="audio/mpeg"/>
+      <link>https://www.yutorah.org/lectures/1197786/Amud-Yomi-Megilla-2a</link>
+    </item>
     <item>
       <title>Amud Yomi Rosh HaShana 35a</title>
       <description>Amud Yomi Rosh HaShana 35a. Source: YUTorah.</description>
